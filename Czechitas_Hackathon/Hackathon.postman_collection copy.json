@@ -1,0 +1,1042 @@
+{
+	"info": {
+		"_postman_id": "74cc6c4b-bbf7-4376-a762-bc376757a453",
+		"name": "Hackathon",
+		"description": "[https://datbph2025-3v1.widlak.cz/module/mymodule/doc#/paths/~1module~1mymodule~1orders/get](https://datbph2025-3v1.widlak.cz/module/mymodule/doc#/paths/~1module~1mymodule~1orders/get)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45254483",
+		"_collection_link": "https://www.postman.com/3e6pa-1091441/workspace/3in1/collection/45254483-74cc6c4b-bbf7-4376-a762-bc376757a453?action=share&source=collection_link&creator=45254483"
+	},
+	"item": [
+		{
+			"name": "GET list of orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test('Schema is valid', function() {",
+							"    const schema = {",
+							"                  \"type\": \"object\",",
+							"                  \"properties\": {",
+							"                    \"orders\": {",
+							"                      \"type\": \"array\",",
+							"                      \"items\": {",
+							"                        \"type\": \"object\",",
+							"                        \"properties\": {",
+							"                          \"id\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"1\"",
+							"                          },",
+							"                          \"reference\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"TVULXTAFZ\"",
+							"                          },",
+							"                          \"total_paid\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"8400.000000\"",
+							"                          },",
+							"                          \"date_add\": {",
+							"                            \"type\": \"string\",",
+							"                            \"format\": \"date-time\",",
+							"                            \"example\": \"2024-05-24 14:19:15\"",
+							"                          }",
+							"                        }",
+							"                      }",
+							"                    }",
+							"                  }",
+							"                }",
+							"    pm.response.to.have.jsonSchema(schema);",
+							"});",
+							"            ",
+							"          ",
+							"            ",
+							"          ",
+							"        ",
+							"    "
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/orders?token=XXX",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 403 list of orders no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/orders",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET order details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test('Schema is valid', function() {",
+							"    const schema = {",
+							"                  \"type\": \"object\",",
+							"                  \"properties\": {",
+							"                    \"id\": {",
+							"                      \"type\": \"integer\",",
+							"                      \"example\": 1",
+							"                    },",
+							"                    \"reference\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"TVULXTAFZ\"",
+							"                    },",
+							"                    \"total_paid\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"8400.000000\"",
+							"                    },",
+							"                    \"date_add\": {",
+							"                      \"type\": \"string\",",
+							"                      \"format\": \"date-time\",",
+							"                      \"example\": \"2024-05-24 14:19:15\"",
+							"                    }",
+							"                  }",
+							"                }",
+							"pm.response.to.have.jsonSchema(schema);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/order?token=XXX&id=15",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"order"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 404 non existing order details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/order?token=XXX&id=99",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"order"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 403 order details no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/order?id=15",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"order"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET list of products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test('Schema is valid', function() {",
+							"    const schema =  {",
+							"                  \"type\": \"object\",",
+							"                  \"properties\": {",
+							"                    \"products\": {",
+							"                      \"type\": \"array\",",
+							"                      \"items\": {",
+							"                        \"type\": \"object\",",
+							"                        \"properties\": {",
+							"                          \"id\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"1\"",
+							"                          },",
+							"                          \"name\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"Budget cabin - TEST\"",
+							"                          },",
+							"                          \"description\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"description long\"",
+							"                          },",
+							"                          \"description_short\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"description_short\"",
+							"                          },",
+							"                          \"price\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"1000.000000\"",
+							"                          },",
+							"                          \"quantity\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"0\"",
+							"                          },",
+							"                          \"new\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": null",
+							"                          },",
+							"                          \"active\": {",
+							"                            \"type\": \"string\",",
+							"                            \"example\": \"1\"",
+							"                          }",
+							"                        }",
+							"                      }",
+							"                    }",
+							"                  }",
+							"    }",
+							"pm.response.to.have.jsonSchema(schema);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/products?token=XXX",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 403 list of products no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/products",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET products details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test('Schema is valid', function() {",
+							"    const schema =  {",
+							"                  \"type\": \"object\",",
+							"                  \"properties\": {",
+							"                    \"id\": {",
+							"                      \"type\": \"integer\",",
+							"                      \"example\": 1",
+							"                    },",
+							"                    \"name\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"Budget cabin - TEST\"",
+							"                    },",
+							"                    \"description\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"description long\"",
+							"                    },",
+							"                    \"description_short\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"description_short\"",
+							"                    },",
+							"                    \"price\": {",
+							"                      \"type\": \"integer\",",
+							"                      \"example\": 1000",
+							"                    },",
+							"                    \"quantity\": {",
+							"                      \"type\": \"integer\",",
+							"                      \"example\": 999999999",
+							"                    },",
+							"                    \"new\": {",
+							"                      \"type\": \"boolean\",",
+							"                      \"example\": false",
+							"                    },",
+							"                    \"active\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"1\"",
+							"                    }",
+							"                  }",
+							"                }",
+							"pm.response.to.have.jsonSchema(schema);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?token=XXX&id=3",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 404 non existing products details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?token=XXX&id=99",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET 403 products details no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?id=3",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST update products details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							"pm.test('Schema is valid', function() {",
+							"    const schema =  {",
+							"                  \"type\": \"object\",",
+							"                  \"properties\": {",
+							"                    \"id\": {",
+							"                      \"type\": \"integer\",",
+							"                      \"example\": 1",
+							"                    },",
+							"                    \"name\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"Budget cabin - TEST\"",
+							"                    },",
+							"                    \"description\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"description long\"",
+							"                    },",
+							"                    \"description_short\": {",
+							"                      \"type\": \"string\",",
+							"                      \"example\": \"description_short\"",
+							"                    }",
+							"                  }",
+							"                }",
+							"pm.response.to.have.jsonSchema(schema);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"1\",\n  \"name\": \"Budget cabin - TEST\",\n  \"description\": \"description long\",\n  \"description_short\": \"description_short\"\n}\n"
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?token=XXX&id=1",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST update non existing products details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"99\",\n  \"name\": \"Budget cabin - TEST\",\n  \"description\": \"description long\",\n  \"description_short\": \"description_short\"\n}\n"
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?token=XXX&id=1",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST 403 update products details no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"1\",\n  \"name\": \"Budget cabin - TEST\",\n  \"description\": \"description long\",\n  \"description_short\": \"description_short\"\n}\n"
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?id=1",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST 405 update products details no id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Status code is 40\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							"pm.test(\"Response body is JSON\", function(){",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"1\",\n  \"name\": \"Budget cabin - TEST\",\n  \"description\": \"description long\",\n  \"description_short\": \"description_short\"\n}\n"
+				},
+				"url": {
+					"raw": "{{hackathon}}/module/mymodule/product?token=XXX",
+					"host": [
+						"{{hackathon}}"
+					],
+					"path": [
+						"module",
+						"mymodule",
+						"product"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "XXX"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "longString",
+			"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+		}
+	]
+}
