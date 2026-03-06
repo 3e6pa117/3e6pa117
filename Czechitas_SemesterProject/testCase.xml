@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10659</projectId>
+    <projectKey>DATBP253</projectKey>
+    <exportDate>2026-03-06 15:25:07 UTC</exportDate>
+    <folders>
+        <folder fullPath="Applications/Parent - Create application" index="0"/>
+    </folders>
+    <testCases>
+        <testCase id="265961761" key="DATBP253-T96">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>K</createdBy>
+            <createdOn>2025-10-11 18:01:57 UTC</createdOn>
+            <customFields>
+                <customField name="Postcondition" type="MULTI_LINE_TEXT">
+                    <value><![CDATA[Log out]]></value>
+                </customField>
+            </customFields>
+            <folder><![CDATA[Applications/Parent - Create application]]></folder>
+            <issues/>
+            <labels>
+                <label><![CDATA[sprint2]]></label>
+            </labels>
+            <name><![CDATA[Creation an application with valid data as Parent]]></name>
+            <objective><![CDATA[Creation the application (filling in the application form) with valid data as Parent role user<br><br>]]></objective>
+            <owner>712020:dd2bbd6f-7103-4304-bb52-6ae84c63ad06</owner>
+            <precondition><![CDATA[Valid Parent credentials are available. &nbsp;<br>There is an active course with open registration and a start date no earlier than the day after tomorrow]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[<span style='color: rgb(23, 43, 77); font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.07px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(241, 242, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">Go to Login page</span>]]></description>
+                        <expectedResult><![CDATA[<span style='color: rgb(23, 43, 77); font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.07px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(241, 242, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">Login page is opened</span>]]></expectedResult>
+                        <testData><![CDATA[​<a href="https://xxxxxxxxxxxx.xxxxxx.xxx/prihlaseni" target="_blank" rel="noopener noreferrer">https://xxxxxxxxxxxx.xxxxxx.xxx/prihlaseni</a>​​​]]></testData>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[<span style='color: rgb(23, 43, 77); font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.07px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(241, 242, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">Fill out login form with valid Parent credentials: enter email and password. Click Log in</span>]]></description>
+                        <expectedResult><![CDATA[<span style='color: rgb(23, 43, 77); font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.07px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(241, 242, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">The page "Přihlaškí" is displayed, there is user name "Frodo Baggins" in the top right corner of the page</span>]]></expectedResult>
+                        <testData><![CDATA[email: xxxxx@mail.com<br>password: Frodo123<br><br>user name: Frodo Baggins<br><br>]]></testData>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                        <description><![CDATA[Click on the "Vytvořit novou přihlášku" button]]></description>
+                        <expectedResult><![CDATA[The page "Vyberte období akce" is opened, parent categories of courses are displayed on it: "Testování", &nbsp;"Programování"]]></expectedResult>
+                        <testData><![CDATA[The page "Vyberte období akce": https://xxxxxxxxxxxx.xxxxxx.xxx]]></testData>
+                    </step>
+                    <step index="3">
+                        <customFields/>
+                        <description><![CDATA[Select the category "Testovani"&nbsp;]]></description>
+                        <expectedResult><![CDATA[The page "Testování" is opened, some categories of courses from this category are displayed on it.]]></expectedResult>
+                        <testData><![CDATA[The page "Testování": https://xxxxxxxxxxxx.xxxxxx.xxx/123-testovan]]></testData>
+                    </step>
+                    <step index="4">
+                        <customFields/>
+                        <description><![CDATA[Select the category "Playwright"&nbsp;]]></description>
+                        <expectedResult><![CDATA[The page "Nová přihláška" is opened. There is a form for application on it. Selected category is displayed in the field "Kategorie".]]></expectedResult>
+                    </step>
+                    <step index="5">
+                        <customFields/>
+                        <description><![CDATA[Verify that selected in the previous step category ("Playwright") is displayed in the field "Kategorie"&nbsp;]]></description>
+                        <expectedResult><![CDATA[&nbsp;selected in the previous step category ("Playwright") is displayed in the field "Kategorie"&nbsp;]]></expectedResult>
+                        <testData><![CDATA["Playwright"]]></testData>
+                    </step>
+                    <step index="6">
+                        <customFields/>
+                        <description><![CDATA[In the dropdown of the field "Termín" select a term where the start date no earlier then the day after tomorrow.]]></description>
+                        <expectedResult><![CDATA[&nbsp;Selected term is visible&nbsp; in the field &nbsp;]]></expectedResult>
+                        <testData><![CDATA[17.11. - 28.11.2025]]></testData>
+                    </step>
+                    <step index="7">
+                        <customFields/>
+                        <description><![CDATA[Verify that the Parent name is displayed in the field Name and surname of legal representative "Jméno a příjmení zákonného zástupce"&nbsp;]]></description>
+                        <expectedResult><![CDATA[The Parent name is displayed in the field "Jméno a příjmení zákonného zástupce"&nbsp;]]></expectedResult>
+                        <testData><![CDATA[Parent name: Frodo Baggins]]></testData>
+                    </step>
+                    <step index="8">
+                        <customFields/>
+                        <description><![CDATA[Enter thee Student name in the field Student name "Křestní jméno žáka"]]></description>
+                        <expectedResult><![CDATA[The entered Student name is displayed in &nbsp;in the field Student name "Křestní jméno žáka"]]></expectedResult>
+                        <testData><![CDATA[Student name: Irka]]></testData>
+                    </step>
+                    <step index="9">
+                        <customFields/>
+                        <description><![CDATA[Enter Student surname in the field Student surname "Příjmení žáka:"&nbsp;]]></description>
+                        <expectedResult><![CDATA[The entered Student surname is displayed in &nbsp;in the field Student surname "Příjmení žáka:"]]></expectedResult>
+                        <testData><![CDATA[Student surname: Baggins]]></testData>
+                    </step>
+                    <step index="10">
+                        <customFields/>
+                        <description><![CDATA[Enter Student &nbsp;Date of birth in the field Date of birth &nbsp;"Datum narození žáka:" (student must be at least 4 years ​old at the time of application creation)]]></description>
+                        <expectedResult><![CDATA[the entered Student &nbsp;Date of birth is displayed in the field Date of birth &nbsp;"Datum narození žáka:"]]></expectedResult>
+                        <testData><![CDATA[Student date of birth: 12.12.2015]]></testData>
+                    </step>
+                    <step index="11">
+                        <customFields/>
+                        <description><![CDATA[Verify that the Parent email is displayed in the field Email address of legal representative &nbsp;"Email zák. zástupce:"&nbsp;]]></description>
+                        <expectedResult><![CDATA[The Parent email is displayed in the field Email address of legal representative &nbsp;"Email zák. zástupce:"&nbsp;]]></expectedResult>
+                        <testData><![CDATA[Parent email:&nbsp;<span style='color: rgb(23, 43, 77); font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.07px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(241, 242, 244); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">xxxxx@mail.com</span>]]></testData>
+                    </step>
+                    <step index="12">
+                        <customFields/>
+                        <description><![CDATA[Select the option "Bankovní převod" in the radio button group in the field &nbsp;Payment options &nbsp;"Způsoby úhrady kurzu:"]]></description>
+                        <expectedResult><![CDATA[The option "Bankovní převod" in the radio button group in the field &nbsp;Payment options &nbsp;"Způsoby úhrady kurzu:" is selected]]></expectedResult>
+                        <testData><![CDATA["Bankovní převod"]]></testData>
+                    </step>
+                    <step index="13">
+                        <customFields/>
+                        <description><![CDATA[Click the Checkbox to agree with general conditions and GDPR&nbsp; ("<span style='color: rgb(33, 37, 41); font-family: "Open Sans", "Helvetica Neue", arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;' data-pasted="true">Souhlasím s všeobecnými podmínkami a zpracováním osobních údajů.")</span>]]></description>
+                        <expectedResult><![CDATA[the checkbox is checked after clicked]]></expectedResult>
+                    </step>
+                    <step index="14">
+                        <customFields/>
+                        <description><![CDATA[Click on the Submit button "Vytvořit přihlašku"]]></description>
+                        <expectedResult><![CDATA[<ul><li>user is notified that application is successfully created</li><li>user is redirected into the "application detail"</li></ul>]]></expectedResult>
+                    </step>
+                    <step index="15">
+                        <customFields/>
+                        <description><![CDATA[Verify that the data from the newly created application matches the test data.]]></description>
+                        <expectedResult><![CDATA[The data from the newly created application matches the test data.]]></expectedResult>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>
